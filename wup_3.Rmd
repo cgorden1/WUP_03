@@ -41,7 +41,22 @@ favstats(alcohol~Seat,data=davisdata)
 As we can see through this data, the mean of front is 1.8, the middle is 3.28, and the back is 9.6. This shows us the back has a larger mean than the front and the middle which means the back has larger alcohol consumption. 
 
 ## Inferential Tests
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+
+We can see through the one way anova test that the Pr results were 0.000116 which tells us that there is a 0.000116 chance that all the rows would be the same. The back row is different from the front row and middle row by being larger in alcohol consumption. The middle row is different from the front row by being larger in alcohol consumption and smaller than the back row in consumption. The front row is different from the back and middle row by being smaller in alcohol consumption. This data tells us that all the rows are very likely to be different. 
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 8.7, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+
+This three element test shows us the front and back are different, the middle and back are different, but the middle and front are statistically not different. 
 
 ## Conclusions
+
 
 
