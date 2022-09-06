@@ -58,5 +58,5 @@ This three element test shows us the front and back are different, the middle an
 
 ## Conclusions
 
-
+Through these tests we have discovered that the back and middle row are different, the front and back row are different, but the middle and front row are satistically the same in alcohol consumption. 
 
